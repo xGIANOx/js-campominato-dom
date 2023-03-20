@@ -15,8 +15,15 @@ playButton.addEventListener("click", function() {
             const cell = `<div class="cell">${i}</div>`;
             container.innerHTML += cell;
         }
+        let cell_click = document.querySelector(".container");
+            let count_cell_clicks = 0;
 
-        const cellEl = document.querySelectorAll(".cell");
+            cell_click.addEventListener("click", function() {
+            count_cell_clicks += 1;
+            
+            });
+
+        let cellEl = document.querySelectorAll(".cell");
         const bombI = [];
   
   
@@ -48,7 +55,7 @@ playButton.addEventListener("click", function() {
                 message.textContent = "Hai perso!";
 
                 const points = document.createElement("p");
-                points.textContent = "Punti = ";
+                points.textContent = `Punteggio = ${count_cell_clicks}`;
 
                 const restartButton = document.createElement("button");
                 restartButton.textContent = "Restart";
@@ -78,12 +85,62 @@ playButton.addEventListener("click", function() {
             container.innerHTML += cell;
         }
 
-        const cellEl = document.querySelectorAll(".cell_diff_2");
+        let cell_click = document.querySelector(".container");
+            let count_cell_clicks = 0;
 
-        for (let i = 0; i < cellEl.length; i++) {
-            const thisCell = cellEl[i];
+            cell_click.addEventListener("click", function() {
+            count_cell_clicks += 1;
+            console.log(count_cell_clicks);
+            });
+
+        let cellEl2 = document.querySelectorAll(".cell_diff_2");
+
+        const bombI = [];
+  
+  
+        while (bombI.length < 16) {
+            const randomI = Math.floor(Math.random() * cellEl2.length);
+            if (!bombI.includes(randomI)) {
+            bombI.push(randomI);
+            }
+        }
+
+
+        for (let i = 0; i < bombI.length; i++) {
+            const thisCell = cellEl2[bombI[i]];
+            thisCell.classList.add("bomb");
+        }
+
+
+        for (let i = 0; i < cellEl2.length; i++) {
+            const thisCell = cellEl2[i];
             console.log(thisCell);
             thisCell.addEventListener("click", function() {
+                if (thisCell.classList.contains("bomb")) {
+                    thisCell.classList.toggle("bg_red");
+                    console.log('Hai perso');
+                    const banner = document.createElement("div");
+                    banner.classList.add("banner");
+    
+                    const message = document.createElement("h3");
+                    message.textContent = "Hai perso!";
+    
+                    const points = document.createElement("p");
+                    points.textContent = `Punteggio = ${count_cell_clicks}`;
+    
+                    const restartButton = document.createElement("button");
+                    restartButton.textContent = "Restart";
+                    restartButton.classList.add("restart-button");
+    
+                    banner.appendChild(message);
+                    banner.appendChild(points);
+                    banner.appendChild(restartButton);
+                    restartButton.addEventListener("click", function() {
+                        location.reload();
+                    });
+                    const body = document.querySelector("body");
+                    body.appendChild(banner);
+                }    
             thisCell.classList.toggle("bg_blue");
             console.log(i + 1);    
         })
@@ -98,12 +155,62 @@ playButton.addEventListener("click", function() {
             container.innerHTML += cell;
         }
 
-        const cellEl = document.querySelectorAll(".cell_diff_3");
+        let cell_click = document.querySelector(".container");
+            let count_cell_clicks = 0;
 
-        for (let i = 0; i < cellEl.length; i++) {
-            const thisCell = cellEl[i];
+            cell_click.addEventListener("click", function() {
+            count_cell_clicks += 1;
+            
+            });
+
+        let cellEl3 = document.querySelectorAll(".cell_diff_3");
+
+        const bombI = [];
+  
+  
+        while (bombI.length < 16) {
+            const randomI = Math.floor(Math.random() * cellEl3.length);
+            if (!bombI.includes(randomI)) {
+            bombI.push(randomI);
+            }
+        }
+
+
+        for (let i = 0; i < bombI.length; i++) {
+            const thisCell = cellEl3[bombI[i]];
+            thisCell.classList.add("bomb");
+        }
+
+
+        for (let i = 0; i < cellEl3.length; i++) {
+            const thisCell = cellEl3[i];
             console.log(thisCell);
             thisCell.addEventListener("click", function() {
+                if (thisCell.classList.contains("bomb")) {
+                    thisCell.classList.toggle("bg_red");
+                    console.log('Hai perso');
+                    const banner = document.createElement("div");
+                    banner.classList.add("banner");
+    
+                    const message = document.createElement("h3");
+                    message.textContent = "Hai perso!";
+    
+                    const points = document.createElement("p");
+                    points.textContent = `Punteggio = ${count_cell_clicks}`;
+    
+                    const restartButton = document.createElement("button");
+                    restartButton.textContent = "Restart";
+                    restartButton.classList.add("restart-button");
+    
+                    banner.appendChild(message);
+                    banner.appendChild(points);
+                    banner.appendChild(restartButton);
+                    restartButton.addEventListener("click", function() {
+                        location.reload();
+                    });
+                    const body = document.querySelector("body");
+                    body.appendChild(banner);
+                }        
             thisCell.classList.toggle("bg_blue");
             console.log(i + 1);    
         })

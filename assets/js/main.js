@@ -69,9 +69,34 @@ playButton.addEventListener("click", function() {
                 });
                 const body = document.querySelector("body");
                 body.appendChild(banner);
+            }  else {
+                thisCell.classList.toggle("bg_blue");
             }
-            thisCell.classList.toggle("bg_blue");
-            console.log(i + 1);    
+
+            if (count_cell_clicks == 84) {
+                let banner = document.createElement("div");
+                banner.classList.add("banner");
+    
+                let message = document.createElement("h3");
+                message.textContent = "Hai vinto!";
+    
+                let points = document.createElement("p");
+                points.textContent = `Punteggio = ${count_cell_clicks + 1}`;
+    
+                let restartButton = document.createElement("button");
+                restartButton.textContent = "Restart";
+                restartButton.classList.add("restart-button");
+    
+                banner.appendChild(message);
+                banner.appendChild(points);
+                banner.appendChild(restartButton);
+                restartButton.addEventListener("click", function() {
+                  location.reload();
+                });
+                const body = document.querySelector("body");
+                body.appendChild(banner);
+              } 
+              console.log(count_cell_clicks);  
         })
         }
 
@@ -90,7 +115,7 @@ playButton.addEventListener("click", function() {
 
             cell_click.addEventListener("click", function() {
             count_cell_clicks += 1;
-            console.log(count_cell_clicks);
+            
             });
 
         let cellEl2 = document.querySelectorAll(".cell_diff_2");
@@ -140,9 +165,35 @@ playButton.addEventListener("click", function() {
                     });
                     const body = document.querySelector("body");
                     body.appendChild(banner);
-                }    
-            thisCell.classList.toggle("bg_blue");
-            console.log(i + 1);    
+                } else {
+                    thisCell.classList.toggle("bg_blue");
+                }
+
+                if (count_cell_clicks == 64) {
+                    let banner = document.createElement("div");
+                    banner.classList.add("banner");
+        
+                    let message = document.createElement("h3");
+                    message.textContent = "Hai vinto!";
+        
+                    let points = document.createElement("p");
+                    points.textContent = `Punteggio = ${count_cell_clicks + 1}`;
+        
+                    let restartButton = document.createElement("button");
+                    restartButton.textContent = "Restart";
+                    restartButton.classList.add("restart-button");
+        
+                    banner.appendChild(message);
+                    banner.appendChild(points);
+                    banner.appendChild(restartButton);
+                    restartButton.addEventListener("click", function() {
+                      location.reload();
+                    });
+                    const body = document.querySelector("body");
+                    body.appendChild(banner);
+                  }   
+            
+            console.log(count_cell_clicks);    
         })
         }
     } else {
@@ -196,7 +247,7 @@ playButton.addEventListener("click", function() {
                     message.textContent = "Hai perso!";
     
                     const points = document.createElement("p");
-                    points.textContent = `Punteggio = ${count_cell_clicks}`;
+                    points.textContent = `Punteggio = ${count_cell_clicks + 1}`;
     
                     const restartButton = document.createElement("button");
                     restartButton.textContent = "Restart";
@@ -208,11 +259,41 @@ playButton.addEventListener("click", function() {
                     restartButton.addEventListener("click", function() {
                         location.reload();
                     });
+                    
                     const body = document.querySelector("body");
                     body.appendChild(banner);
-                }        
-            thisCell.classList.toggle("bg_blue");
-            console.log(i + 1);    
+                } else {
+                    thisCell.classList.toggle("bg_blue");
+                }
+
+                if (count_cell_clicks == 32) {
+                    let banner = document.createElement("div");
+                    banner.classList.add("banner");
+        
+                    let message = document.createElement("h3");
+                    message.textContent = "Hai vinto!";
+        
+                    let points = document.createElement("p");
+                    points.textContent = `Punteggio = ${count_cell_clicks}`;
+        
+                    let restartButton = document.createElement("button");
+                    restartButton.textContent = "Restart";
+                    restartButton.classList.add("restart-button");
+        
+                    banner.appendChild(message);
+                    banner.appendChild(points);
+                    banner.appendChild(restartButton);
+                    restartButton.addEventListener("click", function() {
+                      location.reload();
+                    });
+                    const body = document.querySelector("body");
+                    body.appendChild(banner);
+                  }
+                
+                
+            
+            console.log(count_cell_clicks);   
+            
         })
         }
     }

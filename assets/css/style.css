@@ -1,0 +1,89 @@
+
+body {
+    height: 100vh;
+}
+  
+.container {
+    width: 800px;
+    max-height: 100%;
+    padding-bottom: 2rem;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+}
+
+button,
+select{
+    background-color: rgb(232, 222, 222);
+    border: 1px solid gray;
+}
+
+select{
+    height: 26px;
+}
+
+img{
+    max-width: 100%;
+    width: 100px;
+}
+
+main{
+    background-color: #7fffd4;
+}
+
+.cell{
+    border: 1px solid black;
+    width: calc(100% / 10);
+    max-height: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell_diff_2{
+    
+    border: 1px solid black;
+    width: calc(100% / 9);
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.cell_diff_3{
+    
+    border: 1px solid black;
+    width: calc(100% / 7);
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.bg_blue{
+    background-color: aqua;
+}
+
+.bg_red{
+    background-color: red;
+}
+
+.banner{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    background-color: orange;
+    padding: 6rem;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+}
